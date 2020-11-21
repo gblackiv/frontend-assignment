@@ -16,5 +16,103 @@ $medium-breakpoint: 960px;
   * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  header {
+    background-color: $primary-light;
+    padding: $gutter;
+  }
+  main {
+    justify-content: center;
+    max-width: $site-width;
+    margin: auto;
+    padding: $gutter;
+    padding-top: 40px;
+  }
+  footer {
+    background-color: $primary;
+    color: $primary-light;
+    min-height: 5vh;
+    padding: 8px;
+  }
+  #hero-img {
+    width: $hero-width;
+  }
+  #headshot {
+    width: $profile-image-width;
+    height: $profile-image-width;
+    border-radius: 50%;
+  }
+  .navigation-button {
+    border: 0;
+    border-radius: 4px;
+    background-color: initial;
+    padding: 8px 12px;
+    cursor: pointer;
+    outline: none;
+  }
+  .navigation-button.active {
+    background-color: $primary;
+    color: $primary-light;
+  }
+  @media (min-width: 0) {
+    .grid.item.xs-12 {
+      flex-grow: 0;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    .grid.item.xs-6 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 6);
+      max-width: calc((100% / 12) * 6);
+    }
+    .grid.item.xs-4 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 4);
+      max-width: calc((100% / 12) * 4);
+    }
+    .grid.item.xs-3 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 3);
+      max-width: calc((100% / 12) * 3);
+    }
+    .grid.item.xs-2 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 2);
+      max-width: calc((100% / 12) * 2);
+    }
+    .hide-mobile {
+      display: none;
+    }
+  }
+  @media (min-width: $medium-breakpoint) {
+    .hide-mobile {
+      display: inherit;
+    }
+    .grid.item.md-12 {
+      flex-grow: 0;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    .grid.item.md-9 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 9);
+      max-width: calc((100% / 12) * 9);
+    }
+    .grid.item.md-4 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 4);
+      max-width: calc((100% / 12) * 4);
+    }
+    .grid.item.md-3 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 3);
+      max-width: calc((100% / 12) * 3);
+    }
+    .grid.item.md-2 {
+      flex-grow: 0;
+      flex-basis: calc((100% / 12) * 2);
+      max-width: calc((100% / 12) * 2);
+    }
   }
 }
