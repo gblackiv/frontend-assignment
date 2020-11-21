@@ -10,7 +10,8 @@ const superHeroes = require('./super-heroes.json');
  * ]
  */
 const getDCHeroes = (heroes) => {
-  return heroes;
+  // I emailed Ted about this function, and without a response I just completed it to the requirements of the test function created for it.
+  return heroes.filter(hero => hero.publisher === 'Marvel Comics');
 }
 
 /**
@@ -27,7 +28,7 @@ const getDCHeroes = (heroes) => {
  * ]
  */
 const convertCharactersToArray = (heroes) => {
-  return heroes;
+  return heroes.map(hero => ({...hero, characters: hero.characters.split(', ') }));
 }
 
 /**
@@ -44,7 +45,15 @@ const convertCharactersToArray = (heroes) => {
  * }
  */
 const groupByPublisher = (heroes) => {
-  return heroes;
+  const publisherMap = {};
+  heroes.forEach(hero => {
+    if(publisherMap[hero.publisher]){
+      publisherMap[hero.publisher].push(hero);
+    } else {
+      publisherMap[hero.publisher] = [hero];
+    }
+  })
+  return publisherMap;
 }
 
 /**
@@ -61,7 +70,7 @@ const groupByPublisher = (heroes) => {
  * ]
  */
 const getDCHeroesWithMoreThanOneCharacter = (heroes) => {
-  return heroes;
+  return heroes.filter(hero => hero.characters.split(', ').length > 1);
 }
 
 module.exports = {
